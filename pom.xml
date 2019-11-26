@@ -70,6 +70,13 @@
             <artifactId>cucumber-groovy</artifactId>
             <version>2.0.0</version>
         </dependency>
+        <!--  added so you can run Groovy scripts from IDEA -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.3.11</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -92,6 +99,10 @@
                         <include>**/Test*.java</include>
                         <include>**/*TestSuite.java</include>
                         <include>**/When*.java</include>
+                        <include>**/*Test.groovy</include>
+                        <include>**/Test*.groovy</include>
+                        <include>**/*TestSuite.groovy</include>
+                        <include>**/When*.groovy</include>
                     </includes>
                     <parallel>classes</parallel>
                     <threadCount></threadCount>

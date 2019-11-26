@@ -1,3 +1,6 @@
+package stepdefinitions
+
+
 import cucumber.api.CucumberOptions
 import net.serenitybdd.cucumber.CucumberWithSerenity
 import org.junit.runner.RunWith
@@ -7,5 +10,5 @@ import org.junit.runner.RunWith
         plugin = ["pretty", "html:target/site/cucumber"],
         features = "src/test/resources/features"
 )
-class Runner {
+class SuiteRunner {
 }

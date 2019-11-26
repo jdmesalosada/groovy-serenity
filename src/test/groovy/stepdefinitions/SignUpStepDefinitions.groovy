@@ -7,8 +7,11 @@ import cucumber.api.groovy.EN
 
 class SignUpStepDefinitions {
 
-    /*sgaGiven(~/^Julian wants to create an account$/) { ->
+    /*sGiven(/^Julian wants to create an account$/) { ->
 
     }*/
+
+
+
 
 }
