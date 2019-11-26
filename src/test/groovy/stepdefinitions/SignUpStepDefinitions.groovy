@@ -1,17 +1,14 @@
 package stepdefinitions
 
-//simport cucumber.api.java.en.Given
-//import cucumber.api.groovy.EN
+this.metaClass.mixin(cucumber.api.groovy.Hooks)
+this.metaClass.mixin(cucumber.api.groovy.EN)
 
-import cucumber.api.groovy.EN
+Given(~/^Julian wants to create an account$/) { ->
 
-class SignUpStepDefinitions {
+}
+When(~/^the account holder withdraws €(.+)$/) { double amount ->
 
-    /*sGiven(/^Julian wants to create an account$/) { ->
-
-    }*/
-
-
-
+}
+Then(~/^the account balance will be €(.+)$/) { double expectedBalance ->
 
 }

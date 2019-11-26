@@ -66,9 +66,10 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-groovy -->
         <dependency>
-            <groupId>io.cucumber</groupId>
+            <groupId>info.cukes</groupId>
             <artifactId>cucumber-groovy</artifactId>
-            <version>2.0.0</version>
+            <version>1.2.4</version>
+            <scope>test</scope>
         </dependency>
         <!--  added so you can run Groovy scripts from IDEA -->
         <dependency>
@@ -143,6 +144,23 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generateStubs</goal>
+                            <goal>compile</goal>
+                            <goal>generateTestStubs</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
