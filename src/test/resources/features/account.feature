@@ -1,4 +1,4 @@
-Feature: Bank Account feature
+Feature: Bank Account
 
   @joeBloggsAccount
   Scenario: creating account saves the correct information
