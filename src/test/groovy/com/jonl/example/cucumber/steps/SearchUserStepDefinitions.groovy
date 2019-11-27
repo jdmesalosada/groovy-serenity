@@ -1,6 +1,6 @@
 package com.jonl.example.cucumber.steps
 
-
+import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.questions.TheValue
 import net.serenitybdd.screenplay.rest.interactions.Get
@@ -11,7 +11,7 @@ import static cucumber.api.groovy.EN.*
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat
 import static org.hamcrest.CoreMatchers.equalTo
 
-def actor
+Actor actor
 
 Given(~/^Julian is a not registered user$/) {
     -> actor = OnStage.theActorCalled("Julian");
