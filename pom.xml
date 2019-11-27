@@ -4,19 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mesaj.automationsamples</groupId>
-    <artifactId>groovy-jvm</artifactId>
+    <groupId>com.jonl.example</groupId>
+    <artifactId>cucumber-groovy-tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.69</serenity.version>
-        <serenity.maven.version>2.0.69</serenity.maven.version>
-        <serenity.cucumber.version>1.9.39</serenity.cucumber.version>
-        <encoding>UTF-8</encoding>
-        <tags></tags>
+        <gmaven.runtime>1.8</gmaven.runtime>
+        <groovy.version>2.4.7</groovy.version>
+        <!--<cucumber.version>1.2.4</cucumber.version>-->
+        <cucumber.version>4.2.0</cucumber.version>
+        <junit.version>4.12</junit.version>
+        <serenity.version>2.0.39</serenity.version>
+        <serenity.cucumber.version>1.0.5</serenity.cucumber.version>
+        <serenity.maven.version>2.0.39</serenity.maven.version>
     </properties>
-
 
     <repositories>
         <repository>
@@ -39,94 +40,95 @@
         </pluginRepository>
     </pluginRepositories>
 
+
+
     <dependencies>
+
+
+
+        <!--Serenity Dependencies-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
+            <artifactId>serenity-cucumber4</artifactId>
             <version>${serenity.cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay-rest -->
-        <dependency>
+
+
+        <!--
+    <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay-rest</artifactId>
-            <version>${serenity.cucumber.version}</version>
+            <version>${cucumber.version}</version>
         </dependency>
+                <dependency>
+                    <groupId>net.serenity-bdd</groupId>
+                    <artifactId>serenity-junit</artifactId>
+                    <version>${serenity.version}</version>
+                    <scope>test</scope>
+                </dependency>
+
+-->
+                <!--Serenity Dependencies-->
+
+
+
+        <!--Groovy Dependencies-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-groovy</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--  <dependency>
+             <groupId>info.cukes</groupId>
+             <artifactId>cucumber-junit</artifactId>
+             <version>${cucumber.version}</version>
+             <scope>test</scope>
+         </dependency> -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+         <!--<dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+             <version>${junit.version}</version>
+             <scope>test</scope>
+         </dependency> -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-groovy -->
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-groovy</artifactId>
-            <version>1.2.4</version>
-            <scope>test</scope>
-        </dependency>
-        <!--  added so you can run Groovy scripts from IDEA -->
+
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>2.3.11</version>
-            <scope>test</scope>
+            <version>${groovy.version}</version>
+            <scope>provided</scope>
         </dependency>
-
+        <!--Groovy Dependencies-->
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.1</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/*TestSuite.java</include>
-                        <include>**/When*.java</include>
-                        <include>**/*Test.groovy</include>
-                        <include>**/Test*.groovy</include>
-                        <include>**/*TestSuite.groovy</include>
-                        <include>**/When*.groovy</include>
-                    </includes>
-                    <parallel>classes</parallel>
-                    <threadCount></threadCount>
-                    <forkCount></forkCount>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
+            <!--Serenity plugins-->
+
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
@@ -144,6 +146,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--Serenity plugins-->
 
             <plugin>
                 <groupId>org.codehaus.gmaven</groupId>
@@ -160,8 +163,31 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
+    <!-- I needed to add a profile for something in work and so I just created this simple one
+    Since I'm a complete maven numpty I have to try everything out in simple projects first -->
+    <profiles>
+        <profile>
+            <id>cucumber</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.10</version>
+                        <executions>
+                            <execution>
+                                <id>default-test</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
