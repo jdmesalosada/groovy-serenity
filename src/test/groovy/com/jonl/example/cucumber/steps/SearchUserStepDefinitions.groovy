@@ -1,10 +1,8 @@
 package com.jonl.example.cucumber.steps
 
-import cucumber.api.java.en.Given
-import net.serenitybdd.screenplay.Actor
+
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.questions.TheValue
-import net.serenitybdd.screenplay.rest.abilities.CallAnApi
 import net.serenitybdd.screenplay.rest.interactions.Get
 import net.serenitybdd.screenplay.rest.questions.LastResponse
 import org.apache.http.HttpStatus
