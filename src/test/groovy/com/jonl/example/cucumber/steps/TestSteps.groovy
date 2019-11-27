@@ -52,3 +52,5 @@ When(~/^the account holder withdraws €(.+)$/) { double amount ->
 Then(~/^the account balance will be €(.+)$/) { double expectedBalance ->
     assert account.balance == expectedBalance
 }
+
+

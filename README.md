@@ -7,3 +7,8 @@ mvn test
 
 # Generate report
 mvn serenity:aggregate
+
+# Run and generate report
+mvn verify
+
+
