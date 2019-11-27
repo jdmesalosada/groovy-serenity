@@ -1,6 +1,8 @@
 package com.jonl.example.cucumber.steps
 
+import cucumber.api.java.en.Given
 import net.serenitybdd.screenplay.Actor
+import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.questions.TheValue
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi
 import net.serenitybdd.screenplay.rest.interactions.Get
@@ -10,18 +12,16 @@ import org.apache.http.HttpStatus
 import static cucumber.api.groovy.EN.*
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat
 import static org.hamcrest.CoreMatchers.equalTo
-import static org.hamcrest.MatcherAssert.assertThat
 
-//import net.serenitybdd.screenplay.questions.ValueOf;
-
-def actor = Actor.named("Julian")
+def actor
 
 Given(~/^Julian is a not registered user$/) {
-    -> actor.can(CallAnApi.at("http://localhost:5000"))
+    -> actor = OnStage.theActorCalled("Julian");
+
 }
 
 Given(~/^Julian is user a registered user$/) {
-    -> actor.can(CallAnApi.at("http://localhost:5000"))
+    -> actor = OnStage.theActorCalled("Julian");
 }
 
 When(~/^An agent searches for him with id (.*)$/) { int userId ->
