@@ -16,11 +16,11 @@ import static org.hamcrest.MatcherAssert.assertThat
 
 def actor = Actor.named("Julian")
 
-Given(~/^Julian is a new user in the bank$/) {
+Given(~/^Julian is a not registered user$/) {
     -> actor.can(CallAnApi.at("http://localhost:5000"))
 }
 
-Given(~/^Julian is user not registered$/) {
+Given(~/^Julian is user a registered user$/) {
     -> actor.can(CallAnApi.at("http://localhost:5000"))
 }
 
@@ -60,3 +60,11 @@ Then(~/^he should be told that the user exists$/) { ->
     )
 }
 
+Then(~/^this should be fail$/) { ->
+    actor.should(
+            seeThat(
+                    "response code", TheValue.of(LastResponse.received().answeredBy(actor).statusCode()),
+                    equalTo(HttpStatus.SC_ACCEPTED)
+            )
+    )
+}
