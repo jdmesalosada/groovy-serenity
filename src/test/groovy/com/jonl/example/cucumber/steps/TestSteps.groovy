@@ -26,11 +26,13 @@ World {
 // but can also make use of script variables.
 Before() {
     account = new Account('John Doe', 2319.85, new Date(2000, 1, 1))
+   // print("*******************************************************************Before")
 }
 
 // Register another that also gets run before each scenario tagged with @notused.
 Before("@joeBloggsAccount") {
     account = new Account('Joe Bloggs', 2256.85, new Date(2005, 1, 1))
+   // print("*******************************************************************Before")
 }
 
 // Register another that also gets run before each scenario tagged with
