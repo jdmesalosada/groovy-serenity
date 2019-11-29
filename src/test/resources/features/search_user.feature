@@ -1,3 +1,4 @@
+@api
 Feature: Search users
 
   Scenario: search user that doesn't exist
