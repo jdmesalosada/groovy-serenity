@@ -1,6 +1,6 @@
 package com.jonl.example.cucumber.steps
 
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb
+
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.actors.OnlineCast
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi
@@ -14,22 +14,9 @@ Before("@api") {
             Reference: https://serenity-bdd.github.io/theserenitybook/latest/screenplay-selenium-tasks.html
              */
             OnlineCast.whereEveryoneCan(
-                    CallAnApi.at("http://localhost:5000"),
-                    BrowseTheWeb.with()
+                    CallAnApi.at("http://localhost:5000")
             )
     )
     print("Setting the stage")
 }
 
-Before("@web") {
-    OnStage.setTheStage(
-            /*You can also use the whereEveryoneCan method to provide additional abilities, e.g.
-            This will provide actors who can both use WebDriver starter.tasks and RestAssured starter.tasks.
-            Reference: https://serenity-bdd.github.io/theserenitybook/latest/screenplay-selenium-tasks.html
-             */
-            OnlineCast.whereEveryoneCan(
-                    BrowseTheWeb.with()
-            )
-    )
-    print("Setting the stage")
-}
