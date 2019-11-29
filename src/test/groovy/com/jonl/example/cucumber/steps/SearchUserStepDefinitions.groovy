@@ -15,7 +15,6 @@ Actor actor
 
 Given(~/^Julian is a not registered user$/) {
     -> actor = OnStage.theActorCalled("Julian");
-
 }
 
 Given(~/^Julian is user a registered user$/) {
@@ -23,7 +22,6 @@ Given(~/^Julian is user a registered user$/) {
 }
 
 When(~/^An agent searches for him with id (.*)$/) { int userId ->
-
     actor.attemptsTo(
             Get.resource("/api/users/" + userId)
     )
