@@ -18,5 +18,9 @@ mvn verify
 # Run web scenarios
 mvn verify -Dcucumber.options="--tags '@web'"
 
+# Report Sample
+
+https://jdmesalosada.github.io/groovy-serenity/
+
 
 
