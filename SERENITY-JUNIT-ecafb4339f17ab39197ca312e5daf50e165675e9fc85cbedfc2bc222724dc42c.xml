@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Search users" skipped="0" tests="3" time="3.76" timestamp="2019-12-02 02:07:55"><testcase name="search user that doesn't exist"/><testcase name="search user for user that is registered"/><testcase name="search user for user that is registered - failed test"><failure message="&#10;Expected: &lt;202&gt;&#10;     but: was &lt;200&gt;" type="java.lang.AssertionError">
+Expected: &lt;202&gt;
+     but: was &lt;200&gt;</failure><system-err>
+Expected: &lt;202&gt;
+     but: was &lt;200&gt;&#13;
+groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:326)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)&#13;
+groovy.lang.Closure.call(Closure.java:411)&#13;
+cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)&#13;
+cucumber.runner.TestStep.executeStep(TestStep.java:63)&#13;
+cucumber.runner.TestStep.run(TestStep.java:49)&#13;
+cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)&#13;
+cucumber.runner.TestCase.run(TestCase.java:44)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:40)&#13;
+</system-err></testcase></testsuite>
