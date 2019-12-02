@@ -11,7 +11,6 @@ import static org.hamcrest.CoreMatchers.equalTo
 
 Actor actor
 
-
 Given(~/^Julian is the Administrator$/) {
     -> actor = OnStage.theActorCalled("Julian the Administrator");
 }
