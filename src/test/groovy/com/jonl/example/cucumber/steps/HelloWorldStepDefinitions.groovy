@@ -1,5 +1,7 @@
 package com.jonl.example.cucumber.steps
 
+import com.jonl.example.model.User
+import com.jonl.example.tasks.RegisterUser
 import io.restassured.http.ContentType
 import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.actors.OnStage
@@ -7,6 +9,7 @@ import net.serenitybdd.screenplay.rest.interactions.Post
 import net.serenitybdd.screenplay.rest.questions.RestQueryFunction
 
 import static cucumber.api.groovy.EN.Given
+import static cucumber.api.groovy.EN.When
 
 Actor actor
 
@@ -14,16 +17,32 @@ Given(~/^hello everybody$/) {
     ->
     actor = OnStage.theActorCalled("Julian the Administrator");
 
-    RestQueryFunction restQueryFunction = { request ->
+    RestQueryFunction userInformation = { request ->
         request.body("{\n" +
-                "    \"name\": \"morpheus\",\n" +
+                "    \"name\": \"julian\",\n" +
                 "    \"job\": \"leader\"\n" +
                 "}").contentType(ContentType.JSON)
     }
 
     actor.attemptsTo(
-            Post.to("/api/users").with(restQueryFunction)
+            Post.to("/api/users").with(userInformation)
     )
 }
+
+
+Given(~/^Scarlett want to register$/) { ->
+}
+
+When(~/^she sends the required information to get an account$/) { ->
+
+    User user = new User()
+    user.email = "julian.cho@gmail.com"
+    user.password = "powerfullpassnotbodyknows"
+
+    actor.attemptsTo(
+            RegisterUser.withInfo(user)
+    )
+}
+
 
 
