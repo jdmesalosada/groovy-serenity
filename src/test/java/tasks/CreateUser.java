@@ -10,6 +10,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class CreateUser implements Task {
 
+    //RestQueryFunction restQueryFunction = request -> request.body("").contentType(ContentType.JSON);
     private final Object userInfo;
 
     public CreateUser(Object userInfo) {

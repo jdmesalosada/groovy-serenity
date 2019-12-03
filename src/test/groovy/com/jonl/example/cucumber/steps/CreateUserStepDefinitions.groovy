@@ -11,7 +11,6 @@ import static org.hamcrest.CoreMatchers.equalTo
 
 Actor actor
 
-
 Given(~/^Julian is the Administrator$/) {
     -> actor = OnStage.theActorCalled("Julian the Administrator");
 }
@@ -32,5 +31,3 @@ Then(~/^he should see the user was created successfully$/) {
             .andThat("user name is morpheus", { response -> response.body("name", equalTo("morpheus")) })
             .andThat("job is leader", { response -> response.body("job", equalTo("leader")) })
 }
-
-
