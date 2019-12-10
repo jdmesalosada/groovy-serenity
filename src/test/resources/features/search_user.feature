@@ -15,3 +15,7 @@ Feature: Search users
     Given Julian is user a registered user
     When An agent searches for him with id 2
     Then this should be fail
+
+  Scenario: query a random user registered
+    Given Vane is an Agent
+    When she asks for a specific user of all the registered

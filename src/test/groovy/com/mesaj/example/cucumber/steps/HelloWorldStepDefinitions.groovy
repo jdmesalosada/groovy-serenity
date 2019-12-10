@@ -1,7 +1,7 @@
-package com.jonl.example.cucumber.steps
+package com.mesaj.example.cucumber.steps
 
-import com.jonl.example.model.User
-import com.jonl.example.tasks.RegisterUser
+import com.mesaj.example.model.User
+import com.mesaj.example.tasks.RegisterUser
 import io.restassured.http.ContentType
 import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.actors.OnStage
