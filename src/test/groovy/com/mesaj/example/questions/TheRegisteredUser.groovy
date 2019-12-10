@@ -23,4 +23,22 @@ class TheRegisteredUser {
             data.get(r.nextInt(size))
         }
     }
+
+    //Convert to Question
+    static Question<Datum> randomUserQuestion() {
+        return Question.about("random user").answeredBy(
+                { actor ->
+                    def data = get().answeredBy(theActorInTheSpotlight()).data
+                    def size = data.size()
+                    def r = new Random()
+                    data.get(r.nextInt(size))
+                }
+        )
+    }
+
+    static Question<String> stringToQuestion(String item) {
+        return Question.about("string that want a be a question string").answeredBy(
+                { actor -> item }
+        );
+    }
 }

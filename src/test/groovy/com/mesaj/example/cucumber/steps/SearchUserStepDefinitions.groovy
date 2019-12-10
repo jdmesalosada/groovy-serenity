@@ -1,7 +1,6 @@
 package com.mesaj.example.cucumber.steps
 
 import com.mesaj.example.model.registereduser.Datum
-import com.mesaj.example.model.registereduser.RegisteredUser
 import com.mesaj.example.questions.TheRegisteredUser
 import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.Question
@@ -38,6 +37,12 @@ When(~/^An agent searches for him with id (.*)$/) { int userId ->
 When(~/^she asks for a specific user of all the registered$/) { ->
     Datum randomRegisteredUser = TheRegisteredUser.randomUser()
     print(randomRegisteredUser)
+
+    Question<Datum> randomUserQuestion = TheRegisteredUser.randomUserQuestion()
+    Datum userRegisteredQuestion = randomUserQuestion.answeredBy(actor)
+
+    Question<String> stringQuestion = TheRegisteredUser.stringToQuestion("hello")
+    String normalString = stringQuestion.answeredBy(actor)
 }
 
 Then(~/^he should get a virtual account to manage their products$/) { ->
