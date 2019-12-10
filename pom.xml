@@ -39,11 +39,7 @@
             <url>http://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
-
-
-
     <dependencies>
-
         <!--Serenity Dependencies-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
@@ -115,8 +111,6 @@
             <version>1.3</version>
             <scope>test</scope>
         </dependency>
-
-
         <!--Serenity Dependencies-->
 
         <!--Groovy Dependencies-->
@@ -139,10 +133,8 @@
         </dependency>
         <!--Groovy Dependencies-->
     </dependencies>
-
     <build>
         <plugins>
-
             <!--Serenity plugins-->
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -188,7 +180,6 @@
             </plugin>
         </plugins>
     </build>
-
     <!-- I needed to add a profile for something in work and so I just created this simple one
     Since I'm a complete maven numpty I have to try everything out in simple projects first -->
     <profiles>

@@ -17,6 +17,7 @@ mvn verify
 
 # Run web scenarios
 mvn verify -Dcucumber.options="--tags '@web'"
+mvn verify -Dcucumber.options="--tags '@api'"
 
 
 
