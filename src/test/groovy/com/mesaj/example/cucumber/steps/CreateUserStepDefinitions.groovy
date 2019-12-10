@@ -1,4 +1,4 @@
-package com.jonl.example.cucumber.steps
+package com.mesaj.example.cucumber.steps
 
 import net.serenitybdd.rest.Ensure
 import net.serenitybdd.screenplay.Actor

@@ -1,7 +1,6 @@
-package com.jonl.example.cucumber.steps
+package com.mesaj.example.cucumber.steps
 
-import com.jonl.example.bank.Account
-import cucumber.api.PendingException
+import com.mesaj.example.bank.Account
 
 // Add functions to register hooks and steps to this script.
 this.metaClass.mixin(cucumber.api.groovy.Hooks)

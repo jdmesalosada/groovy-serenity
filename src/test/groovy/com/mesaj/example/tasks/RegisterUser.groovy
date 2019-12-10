@@ -1,6 +1,7 @@
-package com.jonl.example.tasks
+package com.mesaj.example.tasks
 
-import com.jonl.example.model.User
+
+import com.mesaj.example.model.User
 import io.restassured.http.ContentType
 import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.Task

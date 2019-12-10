@@ -1,4 +1,4 @@
-package com.jonl.example.bank;
+package com.mesaj.example.bank;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.jonl.example.model
+package com.mesaj.example.model
 
 class User {
     String email
