@@ -14,7 +14,7 @@ Before("@api") {
             Reference: https://serenity-bdd.github.io/theserenitybook/latest/screenplay-selenium-tasks.html
              */
             OnlineCast.whereEveryoneCan(
-                    CallAnApi.at("http://localhost:5000")
+                    CallAnApi.at("https://reqres.in")
             )
     )
     print("Setting the stage")
