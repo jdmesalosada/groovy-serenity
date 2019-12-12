@@ -112,7 +112,7 @@
             <scope>test</scope>
         </dependency>
         <!--Serenity Jira Plugin Integration-->
-        <!--<dependency>
+        <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jira-plugin</artifactId>
             <version>1.11.0</version>
@@ -121,7 +121,7 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jira-requirements-provider</artifactId>
             <version>1.11.0</version>
-        </dependency>-->
+        </dependency>
         <!--Serenity Jira Plugin Integration-->
         <!--Serenity Dependencies-->
 

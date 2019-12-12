@@ -13,3 +13,6 @@ Feature: Login
     When she sends invalid credentials
     Then she should be told that their credentials are invalid
 
+  @issue:FAX-17
+  Scenario: Failed scenario
+    Given I failed

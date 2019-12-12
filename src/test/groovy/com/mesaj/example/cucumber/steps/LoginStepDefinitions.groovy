@@ -3,18 +3,31 @@ package com.mesaj.example.cucumber.steps
 import com.mesaj.example.tasks.DoLogin
 import net.serenitybdd.rest.Ensure
 import net.serenitybdd.screenplay.Actor
+import net.serenitybdd.screenplay.Question
 import net.serenitybdd.screenplay.actors.OnStage
 import org.apache.http.HttpStatus
 
 import static cucumber.api.groovy.EN.*
-
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat
 import static org.hamcrest.CoreMatchers.*
 
 Actor actor
 
 Given(~/^Vane wants to login$/) {
     ->
-    actor = OnStage.theActorCalled("Vane the user");
+    actor = OnStage.theActorCalled("Vane the user")
+}
+
+Given(~/^I failed$/) {
+    ->
+    actor = OnStage.theActorCalled("Vane the user")
+
+    Question<String> actualValue = Question.about("string that want a be a question string").answeredBy(
+            { a -> "expected" })
+
+    actor.should(
+            seeThat("The value is", actualValue, equalTo("expected"))
+    )
 }
 
 When(~/^she sends invalid credentials$/) { ->
