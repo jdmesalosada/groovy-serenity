@@ -14,5 +14,5 @@ Feature: Login
     Then she should be told that their credentials are invalid
 
   @issue:FAX-17
-  Scenario: Failed scenario
+  Scenario: Failed Scenario
     Given I failed

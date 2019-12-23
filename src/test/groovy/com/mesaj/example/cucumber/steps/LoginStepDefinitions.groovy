@@ -23,7 +23,7 @@ Given(~/^I failed$/) {
     actor = OnStage.theActorCalled("Vane the user")
 
     Question<String> actualValue = Question.about("string that want a be a question string").answeredBy(
-            { a -> "expected" })
+            { a -> "actual" })
 
     actor.should(
             seeThat("The value is", actualValue, equalTo("expected"))
