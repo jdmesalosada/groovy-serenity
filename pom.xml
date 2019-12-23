@@ -111,18 +111,18 @@
             <version>1.3</version>
             <scope>test</scope>
         </dependency>
-        <!--Serenity Jira Plugin Integration
+        <!-- Serenity Jira Plugin Integration -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jira-plugin</artifactId>
             <version>1.11.0</version>
         </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-jira-requirements-provider</artifactId>
-            <version>1.11.0</version>
-        </dependency>
-        Serenity Jira Plugin Integration-->
+        <!--   <dependency>
+               <groupId>net.serenity-bdd</groupId>
+               <artifactId>serenity-jira-requirements-provider</artifactId>
+               <version>1.11.0</version>
+           </dependency>
+           Serenity Jira Plugin Integration-->
         <!--Serenity Dependencies-->
 
         <!--Groovy Dependencies-->
